@@ -1,53 +1,43 @@
-# Gatsby Portfolio Website
+# Tripcart Starter eCommerce
 
-This repo contains a static website written with [GatsbyJS](https://www.gatsbyjs.org/), integrated with content coming from [DatoCMS](https://www.datocms.com).
+Gatsby starter for creating an eCommerce site using [Moltin eCommerce Api ](https://moltin.com/).
 
-![Preview](preview.png)
+This starter adapts an [existing](https://github.com/moltin-examples/nextjs-demo-store) NextJS eCommerce starter for [GatsbyJS](https://www.gatsbyjs.org/).
 
-[See the live demo](https://demo-datocms-gatsby.netlify.com/)
+Demo: <https://parmsang.github.io/gatsby-starter-ecommerce/>
 
-If you want to use try this out yourself, you first need to set up a project on DatoCMS which will host your data.
+This starter originally used Gatsby v1 and has now been updated to v2. The original version can be found in branch "gatsby-v1".
 
-You can [sign up for a free account](https://dashboard.datocms.com/signup) and then you can simply click this button:
+## Getting started
 
-[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/projects/new-from-template/static-website/gatsby-portfolio)
+Install this starter (assuming Gatsby is installed) by running from your CLI:
 
-## Repo usage
+`gatsby new gatsby-store https://github.com/parmsang/gatsby-starter-ecommerce`
 
-First, install the dependencies of this project:
+### Running in development
 
-```
-yarn install
-```
+`npm run develop`
 
-Add an `.env` file containing the read-only API token of your DatoCMS site:
+### Additional Setup
 
-```
-echo 'DATO_API_TOKEN=abc123' >> .env
-```
+Both a moltin and Stripe account are needed for this store to run successfully.
 
-Then, to run this website in development mode (with live-reload):
+Create a `.env.development` and `.env.production` file at the project root with your moltin `client_id` and Stripe test `publishable key`.
 
-```
-yarn develop
+```dosini
+MOLTIN_CLIENT_ID=
+STRIPE_PUBLISHABLE_KEY=
 ```
 
-To build the final, production ready static website:
+## Features
 
-```
-yarn build
-```
+- Moltin eCommerce API
+- React 16
+- PWA (includes manifest.webmanifest & offline support)
+- Eslint & Prettier
+- Styled Components
+- Google Analytics - (you enter the tracking-id)
+- Semantic-UI
+- Authentication via Moltin (Login and Register)
+- Stripe checkout
 
-The final result will be saved in the `public` directory.
-
-## About
-
-The goal of this project is to show how easily you can create static sites using the content (text, images, links, etc.) stored on [DatoCMS](https://www.datocms.com). This project is configured to fetch data from a specific administrative area using [the API DatoCMS provides](https://www.datocms.com/docs/content-management-api).
-
-You can find further information about how to integrate DatoCMS with Gatsby in [our documentation](https://www.datocms.com/docs/static-generators/gatsbyjs).
-
-This websites uses:
-
-- [Yarn](https://yarnpkg.com/) as package manager;
-- [GatsbyJS](https://github.com/gatsbyjs/gatsby) as website generator;
-- [gatsby-source-datocms](https://github.com/datocms/gatsby-source-datocms) to integrate the website with DatoCMS.
